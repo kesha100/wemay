@@ -1,9 +1,8 @@
 from rest_framework import serializers
-from .models import MyUser
+from user.models import MyUser
 
 
 class RegisterSerializer(serializers.Serializer):
-
     email = serializers.EmailField()
     password = serializers.CharField(min_length=3, max_length=20, write_only=True)
 

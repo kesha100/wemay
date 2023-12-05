@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.utils.timezone
-import user.utils
+import user.utils.utils
 
 
 class Migration(migrations.Migration):
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 ('date_joined', models.DateTimeField(default=django.utils.timezone.now, verbose_name='date joined')),
                 ('username', models.CharField(max_length=50, null=True, unique=True)),
                 ('email', models.EmailField(max_length=254, unique=True)),
-                ('image', models.ImageField(blank=True, default=None, upload_to=user.utils.user_image_path)),
+                ('image', models.ImageField(blank=True, default=None, upload_to=user.utils.utils.user_image_path)),
                 ('is_active', models.BooleanField(default=False)),
                 ('activation_code', models.CharField(blank=True, max_length=50)),
                 ('groups', models.ManyToManyField(blank=True, help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.', related_name='user_set', related_query_name='user', to='auth.group', verbose_name='groups')),
